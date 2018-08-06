@@ -12,10 +12,16 @@ class Knowledge(Base):
 	rating = Column(Integer)
 	title = Column(String)
 	def __repr__(self):
+
 		return("topic:{}\n"
 				"title:{}\n"
 				"rating:{}\n").format(self.topic, self.title,self.rating)
-
+	def pring():
+		
+		print("If you want to learn about "+self.topic+", you should look at the Wikipedia article called "+self.title+".We gave this article a rating of "+self.rating+ " out of 10!")
+		if self.rating<= 7 :
+			print("Unfortunately, this article does not have a better rating. Maybe, this is an article that should be replaced soon!.")
+# pring()
 print(repr(Knowledge.__table__))
 
 	# Create a table with 4 columns
