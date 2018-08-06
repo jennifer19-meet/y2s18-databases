@@ -6,6 +6,18 @@ from sqlalchemy import create_engine
 Base = declarative_base()
 
 class Knowledge(Base):
+	__tablename__ = "Knowledge"
+	id_of_stupid_knowledge = Column(Integer, primary_key = True)
+	topic = Column(String)
+	rating = Column(Integer)
+	title = Column(String)
+	def __repr__(self):
+		return("topic:{}\n"
+				"title:{}\n"
+				"rating:{}\n").format(self.topic, self.title,self.rating)
+
+print(repr(Knowledge.__table__))
+
 	# Create a table with 4 columns
 	# The first column will be the primary key
 	# The second column should be a string representing
@@ -14,4 +26,6 @@ class Knowledge(Base):
 	# topic of the article. The last column will be
 	# an integer, representing your rating of the article.
 
-	pass
+	# pass
+	# history and science and life
+	# 2 and 10 and 1
